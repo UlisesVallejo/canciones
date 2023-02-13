@@ -17,32 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/canciones', function () {
-//     $canciones = [];
-//     $canciones[] = [
-//         'nombre' => 'Hola', 
-//         'artista' => 'yo'];
-//     $canciones[] = [
-//         'nombre' => 'adios', 
-//         'artista' => 'tu'];
-
-
-//     return view('/canciones', ['canciones' => $canciones]);
-    
-// });
-
-Route::get('/canciones/{id}', function ($id) {
+Route::get('/canciones/{id?}', function ($id = null) {
     $canciones = [];
-    $canciones[] = [
-        'nombre' => 'Hola', 
-        'artista' => 'yo'];
-    $canciones[] = [
-        'nombre' => 'adios', 
-        'artista' => 'tu'];
+    $canciones[] = ['nombre' => 'Let it be', 'artista' => 'John Lennon'];
+    $canciones[] = ['nombre' => 'Andromeda', 'artista' => 'Zoe'];
 
-    $song = $canciones[$id];
 
-    return view('/canciones', ['canciones' => $song]);
+    if(!is_null($id)){
+        $cancion = $canciones[$id];
+    }else{
+        $cancion = null;
+    }
+
+    return view('/canciones', compact('canciones', 'cancion'));
     
 });
 

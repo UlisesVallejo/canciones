@@ -15,6 +15,12 @@
         @endforeach
     </ul>
 
+    @if(!is_null($cancion))
+        <p>
+            {{ $cancion['nombre'] }} - {{ $cancion['artista'] }}
+        </p>
+    @endif
+
 
 </body>
 </html>
