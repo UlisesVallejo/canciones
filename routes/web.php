@@ -19,7 +19,10 @@ Route::get('/', function () {
 
 Route::get('/canciones/{id?}', function ($id = null) {
     $canciones = [];
-    $canciones[] = ['nombre' => 'Let it be', 'artista' => 'John Lennon'];
+    $canciones[] = [
+        'nombre' => 'Let it be', 
+        'artista' => 'John Lennon'
+    ];
     $canciones[] = ['nombre' => 'Andromeda', 'artista' => 'Zoe'];
 
 
@@ -29,7 +32,7 @@ Route::get('/canciones/{id?}', function ($id = null) {
         $cancion = null;
     }
 
-    return view('/canciones', compact('canciones', 'cancion'));
+    return view('canciones', compact('canciones', 'cancion'));
     
 });
 

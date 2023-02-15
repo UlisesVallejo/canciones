@@ -8,19 +8,19 @@
 </head>
 <body>
     <h1>Canciones</h1>
+    
+    @if(is_null($cancion))
+        <ul>
+            @foreach ($canciones as $cancion)
+                <li>{{ $cancion['nombre'] }} - {{ $cancion['artista']}}</li>  
 
-    <ul>
-        @foreach ($canciones as $cancion)
-            <li>{{ $cancion['nombre'] }} - {{ $cancion['artista'] }}</li>
-        @endforeach
-    </ul>
-
-    @if(!is_null($cancion))
-        <p>
-            {{ $cancion['nombre'] }} - {{ $cancion['artista'] }}
-        </p>
+            @endforeach
+        </ul>
+    @else
+        <p>{{ $cancion['nombre'] }}</p>
+        
+        <p>{{ $cancion['artista'] }}</p>
     @endif
-
-
 </body>
+</html>
 </html>
