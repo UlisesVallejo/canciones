@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::get('canciones/{id?}', [PaginasController::class, 'canciones']);
 Route::get('contacto', [PaginasController::class, 'contacto']);
 Route::post('contacto', [PaginasController::class, 'postContacto']);
+Route::get('producto', [ProductoController::class, 'index']);
 
 // Route::get('/canciones/{id?}', function ($id = null) {
 //     $canciones = [];
