@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\PaginasController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +23,14 @@ Route::get('/', function () {
 });
 
 Route::get('canciones/{id?}', [PaginasController::class, 'canciones']);
+
 Route::get('contacto', [PaginasController::class, 'contacto']);
+
 Route::post('contacto', [PaginasController::class, 'postContacto']);
-Route::get('producto', [ProductoController::class, 'index']);
+
+//Route::get('producto', [ProductoController::class, 'index']);
+
+Route::resource('producto', ProductoController::class);
 
 // Route::get('/canciones/{id?}', function ($id = null) {
 //     $canciones = [];
