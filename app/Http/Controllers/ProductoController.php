@@ -65,9 +65,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Producto $producto)
     {
-        //
+        return view('producto/show-producto', compact('producto'));
     }
 
     /**

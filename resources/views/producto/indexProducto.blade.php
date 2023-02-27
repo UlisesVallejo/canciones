@@ -9,14 +9,15 @@
 <body>
     
     <h1>Productos</h1>
+    <a href ="/producto/create">Agregar Producto</a><br>
     
     @foreach($productos as $prod)
         <h4>Producto</h4>
         <ul>
+            <li>ID: {{ $prod->id }}</li>
             <li>Nombre: {{ $prod->nombre }}</li>
-            <li>Descripcion: {{ $prod->descripcion }}</li>
             <li>Costo: {{ $prod->coto }}</li>
-            <li>Stock: {{ $prod->stock }}</li>
+            <a href="/producto/{{ $prod->id }}">Detalle (SHOW)</a>
         </ul>
     @endforeach
 
