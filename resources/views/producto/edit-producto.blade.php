@@ -9,7 +9,7 @@
 <body>
     <h1>Editar Producto</h1>
 
-    <form action="/producto/{{ producto->id }}" method="POST">
+    <form action="/producto/{{ $producto->id }}" method="POST">
         @csrf
         @method('PATCH')
 

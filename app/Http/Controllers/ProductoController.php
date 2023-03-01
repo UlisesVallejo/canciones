@@ -76,9 +76,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Producto $producto)
     {
-        //
+        return view('producto/edit-producto', compact('producto'));
     }
 
     /**
@@ -88,9 +88,23 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Producto $producto)
     {
-        //
+        $request->validate([
+            'nombre' => ['required', 'string', 'max:255', 'min:5'],
+            'descripcion' => ['required', 'string', 'max:255', 'min:5'],
+            'coto' => ['required', 'numeric', 'min:1'],
+            'stock' => ['required', 'integer', 'max:255']
+        ]);
+
+        $producto->nombre = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->coto = $request->coto;
+        $producto->stock = $request->stock;
+
+        $producto->save();
+
+        return redirect('/producto');
     }
 
     /**
