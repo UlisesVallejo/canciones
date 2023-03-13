@@ -14,5 +14,15 @@
     <h5>{{ $producto->coto }}</h5>
     <h5>{{ $producto->stock }}</h5>
 
+
+    <p>
+        <form action="{{ route('producto.destroy', $producto) }}" method = "POST">
+            @csrf
+            @method('DELETE')
+            <button type = "submit">BORRAR</button>
+        </form>
+    </p>
+
+
 </body>
 </html>

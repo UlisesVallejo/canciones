@@ -14,7 +14,7 @@
         @method('PATCH')
 
         <label for="nombre">Nombre</label><br>
-        <input type="text" name="nombre" id="nombre"><br>
+        <input type="text" name="nombre" id="nombre" value="{{ old('nombre') ?? $producto->nombre }}"><br>
 
         @error('nombre')
             <h5>{{ $message }}</h5>
@@ -23,7 +23,7 @@
         <br>
 
         <label for="descripcion">Descripcion</label><br>
-        <input type="text" name="descripcion" id="descripcion"><br>
+        <input type="text" name="descripcion" id="descripcion" value="{{ old('descripcion') ?? $producto->descripcion }}"><br>
 
         @error('descripcion')
             <h5>{{ $message }}</h5>
@@ -32,7 +32,7 @@
         <br>
 
         <label for="costo">Costo</label><br>
-        <input type="text" name="coto" id="coto"><br>
+        <input type="text" name="coto" id="coto" value="{{ old('coto') ?? $producto->coto }}"><br>
 
         @error('coto')
             <h5>{{ $message }}</h5>
@@ -41,7 +41,7 @@
         <br>
 
         <label for="stock">Stock</label><br>
-        <input type="number" name="stock" id="stock"><br>
+        <input type="number" name="stock" id="stock" value="{{ old('stock') ?? $producto->stock }}"><br>
 
         @error('stock')
             <h5>{{ $message }}</h5>
